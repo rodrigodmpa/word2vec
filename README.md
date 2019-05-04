@@ -10,6 +10,6 @@ To run:
 * Build 
 `docker build -t flask-app:latest .`
 * Run
-`docker run -p 5000:5000 -v /Users/rodrigodmpa/Documents/IA/web:/app flask-app`
+`docker run -p 5000:5000 -v [path to the app]:/app flask-app`
 * If wants to use the container bash
 `docker exec -i -t name-container bash`
