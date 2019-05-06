@@ -5,6 +5,8 @@ from flask_bootstrap import Bootstrap
 from my_word2vec import *
 from form import *
 
+default_model = gensim.models.Word2Vec.load('modelos/saved_models')
+
 def create_app():
   app = Flask(__name__)
   app.secret_key = "!@a1'f57jF2!2$d4#"
@@ -29,7 +31,7 @@ def index():
 def compara():
 	gera = { "similarity":0,"lista":0,'operar':0,'keyerror':0 }
 	if request.method == 'POST':
-		default_model = gensim.models.Word2Vec.load('modelos/saved_models')
+		
 		gera = { "similarity":1,"lista":0,'operar':0,'keyerror':0 }
 		try:
 			arg1 = request.form.get('arg1')
@@ -49,7 +51,7 @@ def lista():
 	gera = { "similarity":0,"lista":0,'operar':0,'keyerror':0 }
 	if request.method == 'POST':
 		print(request.form.get('arg1',type=str))
-		default_model = gensim.models.Word2Vec.load('modelos/saved_models')
+
 		gera = { "similarity":1,"lista":1,'operar':0,'keyerror':0 }
 		
 		try:
@@ -69,7 +71,6 @@ def lista():
 def operar():
 	gera = { "similarity":0,"lista":0,'operar':0,'keyerror':0 }
 	if request.method == 'POST':
-		default_model = gensim.models.Word2Vec.load('modelos/saved_models')
 		gera = { "similarity":0,"lista":0,'operar':1,'keyerror':0 }
 		
 		try:
@@ -90,7 +91,6 @@ def operar():
 def similar_entre():
 	gera = { "similarity":0,"lista":0,'operar':0,'operar':0,'keyerror':0 }
 	if request.method == 'POST':
-		default_model = gensim.models.Word2Vec.load('modelos/saved_models')
 		gera['similar_entre'] = 1
 		try:
 			arg1 = request.form.get('arg1',type=str)
