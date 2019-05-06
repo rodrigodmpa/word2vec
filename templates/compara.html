@@ -16,14 +16,14 @@
 
     <center>
     <img class="m-5" src="{{url_for('static', filename='logo.png')}}" />
-    <h1 class="m-3">Comparar duas palavras</h1>
+    <h1 class="m-3">Compare</h1>
     <div class="row">
         <div class="col-sm-3 col-centered">
             <form method="post">
                 <div class="form-group">
-                    <label>Comparar duas palavras: </label><br>
-                    <input class="form-control m-2" placeholder="Palavra 1" type="text" name="arg1" required>
-                    <input class="form-control m-2" placeholder="Palavra 2" type="text" name="arg2" required>
+                    <label>Compare two words: </label><br>
+                    <input class="form-control m-2" placeholder="Word 1" type="text" name="arg1" required>
+                    <input class="form-control m-2" placeholder="Word 2" type="text" name="arg2" required>
                     <p><input type="submit"></p>  
                 </div> 
             </form>
@@ -40,7 +40,7 @@
         </div>
     </div>
 </center>
-<a class="btn btn-dark m-5" href="/">Voltar</a>
+<a class="btn btn-dark m-5" href="/">Back</a>
     
 </body>
 <script>
@@ -69,12 +69,12 @@ var data = [{ type: 'scatter',
    x: [0], y:[0],
     marker: {size: 28, color:'850000'},
     showlegend: false,
-    name: 'similaridade',
+    name: 'similarities',
     text: level,
     hoverinfo: 'text+name'},
   { values: [20, 20, 20, 20,20,100],
   rotation: 90,
-  text: ['Muito Parecidas!', 'Parecidas', 'Similares', 'Pouco similares', 'Nada a ver!'],
+  text: ['Very similar!', 'Similar', 'Something in common', 'Little similar', 'Nothing in common!'],
   textinfo: 'text',
   textposition:'inside',
   marker: {colors:['rgba(14, 127, 0, .5)', 'rgba(110, 154, 22, .5)',
@@ -97,7 +97,7 @@ var layout = {
         color: '850000'
       }
     }],
-  title: 'Similaridade de {{arg1}} e {{arg2}}: {{ comparacao*100 }}%',
+  title: 'Similarity of {{arg1}} and {{arg2}}: {{ comparacao*100 }}%',
   height: 1000,
   width: 1000,
   xaxis: {zeroline:false, showticklabels:false,
