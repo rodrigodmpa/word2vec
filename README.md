@@ -1,4 +1,5 @@
 # word2vec
+
 Web Interface for w2v model
 
 Needs a w2v trained model from gensim on a `model/` folder.
@@ -7,11 +8,11 @@ Needs Docker to run.
 
 To run:
 
-* Build 
+* Build:</br>
 `docker build -t flask-app:latest .`
-* Run
+* Run:</br>
 `docker run -p 5000:5000 -v [path to the app]:/app flask-app`
-* If wants to use the container bash
+* If wants to use the container bash:</br>
 `docker exec -i -t name-container bash`
 
 ## Functions
