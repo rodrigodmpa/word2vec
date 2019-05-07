@@ -16,15 +16,15 @@
     
     <center>
     <img class="m-5" src="{{url_for('static', filename='logo.png')}}" />
-    <h1 class="m-3">Lista de Similaridade</h1>
+    <h1 class="m-3">Similarity List</h1>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3 col-centered">
                 <form class="" method="post">
                     <div class="form-group">
-                        <label>Palavra: </label>
+                        <label>Word: </label>
                         <input class="form-control" type="text" name="arg1" placeholder="Palavra" required><br>
-                        <label>Quantas palavras quer na saída? </label>
+                        <label>How many words on the output? </label>
                         <input class="form-control" type="number" name="arg2" placeholder="Quantas?" required value="10"><br>
                         <p><input type="submit" >
                     </div>
@@ -34,12 +34,12 @@
         <div class="row">
             <div class="col-sm-3 col-centered" >
                 {% if gera["lista"] == 1 and gera["keyerror"] != 1:%}
-                    <h3> Top {{arg2}} mais similares a {{arg1}}: </h3>
+                    <h3> Top {{arg2}} most similar to {{arg1}}: </h3>
                     <table class="table table-striped table-dark">
                         <thead>
                             <th>Rank</th>
-                            <th>Palavra</th>
-                            <th >Porcentagem (%)</th>
+                            <th>Word</th>
+                            <th >Percentage (%)</th>
                         </thead>
                         <tbody>
                         {% for item in lista %}
@@ -59,7 +59,7 @@
             </div>
         </div>
     </div></center>
-    <a class="btn btn-dark m-5" href="/">Voltar</a>
+    <a class="btn btn-dark m-5" href="/">Back</a>
 </body>
 
 </html>
