@@ -38,6 +38,7 @@ def compara():
 			comparacao = default_model.wv.similarity(arg1,arg2)
 		except KeyError as e:
 			gera = { "similarity":1,"lista":0,'operar':0,'keyerror':1 }
+			flash('Error! ')
 			return render_template('compara.html', gera=gera, e=e)
 		comparacao = round(comparacao,4)
 		flash('Done! ')
@@ -59,8 +60,9 @@ def lista():
 			lista = default_model.wv.similar_by_word(arg1,topn=arg2)
 		except KeyError:
 			lista = []
-			e = 'The word '+arg1+' don''t isn''t in the model.'
+			e = 'The word '+arg1+' isn''t in the model.'
 			gera = { "similarity":1,"lista":0,'operar':0,'keyerror':1 }
+			flash('Error! ')
 			return render_template('lista.html', gera=gera, lista=lista, e=e)
 		flash('Done! ')
 		return render_template('lista.html', gera=gera, lista=lista, arg1=arg1,arg2=arg2)
@@ -82,6 +84,7 @@ def operar():
 		except KeyError as e:
 			lista = []
 			gera = { "similarity":0,"lista":0,'operar':0,'keyerror':1 }
+			flash('Error! ')
 			return render_template('operar.html', gera=gera, lista=lista, e=e)
 		flash('Done! ')
 		return render_template('operar.html', gera=gera, lista=lista, positive=positive,negative=negative)
@@ -100,6 +103,7 @@ def similar_entre():
 		except KeyError as e:
 			item = ''
 			gera['keyerror'] = 1
+			flash('Error! ')
 			return render_template('similar_entre.html', gera=gera, item=item, e=e)
 		flash('Done! ')
 		return render_template('similar_entre.html', gera=gera, item=item, arg1=arg1,arg2=arg2)
