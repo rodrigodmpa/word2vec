@@ -1,39 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Word2Vec</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='pyplot.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-
-</head>
-
-<body>
-
-
-    <center>
-        {% with messages = get_flashed_messages() %}
-        {% if messages and gera["keyerror"] != 1 %}
-        <div class="alert alert-success" role="alert">
-            {% for message in messages %}
-            {{ message }}
-            {% endfor %}
-        </div>
-        {% elif messages and gera["keyerror"] == 1 %}
-        <div class="alert alert-danger" role="alert">
-            {% for message in messages %}
-            {{ message }}
-            {% endfor %}
-        </div>
-        {% endif %}
-        {% endwith %}
-        <img class="m-5" src="{{url_for('static', filename='logo.png')}}" />
-        <h1 class="m-3">Operate Words</h1>
+{% extends 'base.html' %}
+{% block title %}Word2Vec{% endblock %}
+{% block content %}
+<h1 class="m-3">Operate Words</h1>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 col-centered">
@@ -81,6 +49,4 @@
         </div>
     </center>
     <a class="btn btn-dark m-5" href="/">Back</a>
-</body>
-
-</html>
+{% endblock %}
